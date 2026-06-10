@@ -1,0 +1,13 @@
+<resources>
+    <color name="bg">#0F1422</color>
+    <color name="panel">#1B2236</color>
+    <color name="panel_alt">#232C45</color>
+    <color name="accent">#4FC3F7</color>
+    <color name="accent_dim">#2E5C73</color>
+    <color name="core">#FFCA28</color>
+    <color name="situational">#81C784</color>
+    <color name="text">#ECEFF4</color>
+    <color name="text_dim">#9AA5B8</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

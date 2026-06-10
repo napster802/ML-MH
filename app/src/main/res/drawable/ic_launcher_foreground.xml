@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Simple shield + checkmark glyph for the advisor. -->
+    <path
+        android:fillColor="#4FC3F7"
+        android:pathData="M54,28 L74,36 L74,54 C74,68 65,76 54,82 C43,76 34,68 34,54 L34,36 Z" />
+    <path
+        android:fillColor="#0F1422"
+        android:pathData="M46,54 L52,60 L64,46 L60,42 L52,52 L50,50 Z" />
+</vector>

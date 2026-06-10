@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MLBB Advisor</string>
+    <string name="overlay_channel_name">Advisor Overlay</string>
+    <string name="notif_title">MLBB Advisor running</string>
+    <string name="notif_text">Tap the floating bubble to pick heroes and see builds.</string>
+    <string name="grant_overlay">Grant \"Display over other apps\"</string>
+    <string name="start_overlay">Start floating advisor</string>
+    <string name="stop_overlay">Stop floating advisor</string>
+    <string name="permission_needed">This app needs the \"Display over other apps\" permission to float the advisor on top of the game. It never reads anything from the game — you pick the heroes yourself.</string>
+</resources>
