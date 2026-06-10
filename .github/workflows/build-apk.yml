@@ -1,7 +1,9 @@
 name: Build APK
 
 # Builds the debug APK and publishes it as a downloadable release asset.
-# Runs on every push to the dev branch, and can be triggered manually.
+# Uses only GitHub-authored actions/* plus tooling preinstalled on the
+# ubuntu-latest runner (Android SDK + gh CLI) to stay compatible with
+# repos that restrict third-party actions.
 on:
   push:
     branches:
@@ -24,16 +26,12 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-
       - name: Build debug APK
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: |
+          chmod +x ./gradlew
+          ./gradlew assembleDebug --no-daemon --stacktrace
 
-      - name: Rename APK
+      - name: Stage APK
         run: |
           mkdir -p dist
           cp app/build/outputs/apk/debug/app-debug.apk dist/MLBB-Advisor.apk
@@ -46,19 +44,11 @@ jobs:
           if-no-files-found: error
 
       - name: Publish APK to a release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: apk-latest
-          name: MLBB Advisor (latest debug build)
-          body: |
-            Auto-built debug APK of the MLBB Advisor app.
-
-            Download `MLBB-Advisor.apk` below, copy it to your Android phone,
-            and install it (you may need to allow "Install unknown apps" for
-            your file manager / browser). On first launch, grant the
-            "Display over other apps" permission.
-
-            This is a knowledge-base build/tips advisor — it reads nothing
-            from the game.
-          files: dist/MLBB-Advisor.apk
-          prerelease: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete apk-latest --yes --cleanup-tag || true
+          gh release create apk-latest dist/MLBB-Advisor.apk \
+            --title "MLBB Advisor (latest debug build)" \
+            --prerelease \
+            --notes "Auto-built debug APK of the MLBB Advisor app. Download MLBB-Advisor.apk below, copy it to your Android phone and install it (allow 'Install unknown apps' if prompted). On first launch, grant the 'Display over other apps' permission. This is a knowledge-base build/tips advisor — it reads nothing from the game."
