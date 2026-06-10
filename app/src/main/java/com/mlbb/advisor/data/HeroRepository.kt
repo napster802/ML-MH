@@ -17,8 +17,10 @@ object HeroRepository {
     private fun core(name: String, reason: String) = ItemAdvice(name, reason, Priority.CORE)
     private fun lux(name: String, reason: String) = ItemAdvice(name, reason, Priority.LUXURY)
 
-    val heroes: List<Hero> = listOf(
+    // The roster is split into per-group lists so no single initializer
+    // method exceeds the JVM 64 KB bytecode limit.
 
+    private val assassins = listOf(
         // ============================ ASSASSINS ============================
         Hero(
             name = "Lancelot", role = Role.ASSASSIN, damageType = DamageType.PHYSICAL,
@@ -201,6 +203,9 @@ object HeroRepository {
             battleSpell = "Retribution (jungle)", battleSpellAlt = "Flicker"
         ),
 
+    )
+
+    private val marksmen = listOf(
         // ============================ MARKSMEN =============================
         Hero(
             name = "Beatrix", role = Role.MARKSMAN, damageType = DamageType.PHYSICAL,
@@ -455,6 +460,9 @@ object HeroRepository {
             battleSpell = "Flicker", battleSpellAlt = "Sprint"
         ),
 
+    )
+
+    private val mages = listOf(
         // ============================== MAGES ==============================
         Hero(
             name = "Kagura", role = Role.MAGE, damageType = DamageType.MAGIC,
@@ -727,6 +735,9 @@ object HeroRepository {
             battleSpell = "Flicker", battleSpellAlt = "Flameshot"
         ),
 
+    )
+
+    private val fighters = listOf(
         // ============================= FIGHTERS ============================
         Hero(
             name = "Chou", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
@@ -1071,6 +1082,9 @@ object HeroRepository {
             battleSpell = "Flicker", battleSpellAlt = "Execute"
         ),
 
+    )
+
+    private val tanks = listOf(
         // ============================== TANKS ==============================
         Hero(
             name = "Tigreal", role = Role.TANK, damageType = DamageType.PHYSICAL,
@@ -1343,6 +1357,9 @@ object HeroRepository {
             battleSpell = "Flicker", battleSpellAlt = "Vengeance"
         ),
 
+    )
+
+    private val supports = listOf(
         // ============================= SUPPORTS ============================
         Hero(
             name = "Estes", role = Role.SUPPORT, damageType = DamageType.MAGIC,
@@ -1489,6 +1506,9 @@ object HeroRepository {
             battleSpell = "Flicker", battleSpellAlt = "Petrify"
         ),
 
+    )
+
+    private val recent = listOf(
         // ===================== LATEST / RECENT HEROES ======================
         Hero(
             name = "Lukas", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
@@ -1795,6 +1815,9 @@ object HeroRepository {
             battleSpell = "Flicker", battleSpellAlt = "Petrify"
         ),
 
+    )
+
+    private val classics = listOf(
         // ===================== POPULAR CLASSIC HEROES ======================
         Hero(
             name = "Alucard", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
@@ -2025,6 +2048,9 @@ object HeroRepository {
             battleSpell = "Flicker", battleSpellAlt = "Sprint"
         )
     )
+
+    val heroes: List<Hero> =
+        assassins + marksmen + mages + fighters + tanks + supports + recent + classics
 
     /** All hero names, sorted, for the picker UI. */
     val heroNames: List<String> by lazy { heroes.map { it.name }.distinct().sorted() }
