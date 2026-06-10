@@ -1487,6 +1487,542 @@ object HeroRepository {
             powerSpike = "Strong AoE-amplify engage support in grouped fights.",
             emblem = "Support", emblemTalents = "Pull Yourself Together · CD reset",
             battleSpell = "Flicker", battleSpellAlt = "Petrify"
+        ),
+
+        // ===================== LATEST / RECENT HEROES ======================
+        Hero(
+            name = "Lukas", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.BURST, Threat.SUSTAINED_DPS),
+            coreBuild = listOf(
+                core("Tough Boots", "Tenacity to brawl through CC."),
+                core("Endless Battle", "True damage + sustain on his combos."),
+                core("War Axe", "Stacking power + CDR."),
+                core("Hunter Strike", "Penetration and a movement spike."),
+                lux("Blade of Despair", "Burst spike in beast form."),
+                lux("Immortality", "Dive insurance.")
+            ),
+            tips = listOf(
+                "Charge your hero-energy bar, then ult into beast form for empowered combos.",
+                "Weave basics between skills to keep your passive momentum."
+            ),
+            powerSpike = "Strong mid-game brawler once Endless Battle is online.",
+            emblem = "Fighter", emblemTalents = "Festival of Blood · spell vamp",
+            battleSpell = "Flicker", battleSpellAlt = "Execute"
+        ),
+        Hero(
+            name = "Suyou", role = Role.ASSASSIN, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.BURST, Threat.HIGH_MOBILITY),
+            coreBuild = listOf(
+                core("Swift Boots", "Attack speed for his enhanced strikes."),
+                core("Endless Battle", "True damage + sustain on first hits."),
+                core("Hunter Strike", "Penetration + mobility."),
+                core("Blade of Despair", "Burst to delete the back line."),
+                lux("Malefic Roar", "Shred tanks late."),
+                lux("Immortality", "Survive a deep dive.")
+            ),
+            tips = listOf(
+                "Pole-vault in and out — use the dismount window to dodge skills.",
+                "Pick isolated carries; reposition with your mobility between hits."
+            ),
+            powerSpike = "Snowballing picker once two core items are done.",
+            emblem = "Assassin", emblemTalents = "Lethal Ignition · attack + pen",
+            battleSpell = "Retribution (jungle)", battleSpellAlt = "Flicker"
+        ),
+        Hero(
+            name = "Zhuxin", role = Role.MAGE, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.HEAVY_CC, Threat.BURST, Threat.POKE),
+            coreBuild = listOf(
+                core("Demon Shoes", "Mana for sustained casting."),
+                core("Clock of Destiny", "Power + HP scaling."),
+                core("Lightning Truncheon", "Burst proc on your snared targets."),
+                core("Divine Glaive", "Penetration vs magic resist."),
+                lux("Holy Crystal", "Max AoE burst."),
+                lux("Blood Wings", "Shield + power to channel safely.")
+            ),
+            tips = listOf(
+                "Land your lantern snare, then dump your combo on the held targets.",
+                "Your ult locks a whole area — pre-aim it over the enemy clump."
+            ),
+            powerSpike = "Strong AoE control-burst mage from the mid game.",
+            emblem = "Mage", emblemTalents = "Impure Rage · burst focus",
+            battleSpell = "Flameshot", battleSpellAlt = "Flicker"
+        ),
+        Hero(
+            name = "Kalea", role = Role.SUPPORT, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.HEAVY_CC, Threat.HIGH_MOBILITY),
+            coreBuild = listOf(
+                core("Tough Boots", "Tenacity to land your displacement."),
+                core("Dominance Ice", "Defense + anti-heal + slow aura."),
+                core("Athena's Shield", "Magic shield to engage."),
+                core("Antique Cuirass", "Armor for the front line."),
+                lux("Oracle", "Boosts your shields/regen."),
+                lux("Immortality", "Stay alive after the engage.")
+            ),
+            tips = listOf(
+                "Knock enemies into walls/your team with your wave displacement.",
+                "Roam to set up ganks; you bring engage and peel for the carry."
+            ),
+            powerSpike = "Strong roaming engage support from the early game.",
+            emblem = "Support", emblemTalents = "Pull Yourself Together · CD reset",
+            battleSpell = "Flicker", battleSpellAlt = "Sprint"
+        ),
+        Hero(
+            name = "Chip", role = Role.SUPPORT, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.HEAVY_CC),
+            coreBuild = listOf(
+                core("Tough Boots", "Tenacity for engages."),
+                core("Dominance Ice", "Defense + anti-heal + slow aura."),
+                core("Athena's Shield", "Magic shield vs mages."),
+                core("Antique Cuirass", "Armor stacking."),
+                lux("Oracle", "Boosts your shields/regen."),
+                lux("Immortality", "Front-line revive.")
+            ),
+            tips = listOf(
+                "Your portal ult lets the team rotate or gank across the map — coordinate it.",
+                "Engage with your stun, then portal allies in for the collapse."
+            ),
+            powerSpike = "Strong map-mobility engage support all game.",
+            emblem = "Support", emblemTalents = "Pull Yourself Together · CD reset",
+            battleSpell = "Flicker", battleSpellAlt = "Vengeance"
+        ),
+        Hero(
+            name = "Cici", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.SUSTAINED_DPS, Threat.HIGH_MOBILITY, Threat.LIFESTEAL),
+            coreBuild = listOf(
+                core("Swift Boots", "Attack speed for her ribbon hits."),
+                core("Corrosion Scythe", "Attack speed + slow to kite."),
+                core("Endless Battle", "True damage + sustain."),
+                core("Demon Hunter Sword", "Percent damage + lifesteal."),
+                lux("Blade of Despair", "Burst per hit."),
+                lux("Immortality", "Dive insurance.")
+            ),
+            tips = listOf(
+                "Bounce around the fight with your ribbon dashes to stay untargetable.",
+                "Sustain through brawls; you out-last most duelists in the side lane."
+            ),
+            powerSpike = "Strong elusive side-laner from two items.",
+            emblem = "Fighter", emblemTalents = "Festival of Blood · spell vamp",
+            battleSpell = "Flicker", battleSpellAlt = "Sprint"
+        ),
+        Hero(
+            name = "Ixia", role = Role.MARKSMAN, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.SUSTAINED_DPS, Threat.POKE),
+            coreBuild = listOf(
+                core("Swift Boots", "Attack speed to fuel her ult barrage."),
+                core("Corrosion Scythe", "Attack speed + slow to kite."),
+                core("Demon Hunter Sword", "Percent damage + lifesteal."),
+                core("Golden Staff", "On-hit reliability for her barrage."),
+                lux("Malefic Roar", "Penetration vs tanks."),
+                lux("Wind of Nature", "Survive a dive.")
+            ),
+            tips = listOf(
+                "Your ult auto-fires while you reposition — keep enemies in the cone.",
+                "Skill-1 marks fuel bonus damage; stay attacking to keep them flowing."
+            ),
+            powerSpike = "Strong AoE-DPS carry in grouped fights from two items.",
+            emblem = "Marksman", emblemTalents = "Weapons Master · attack speed",
+            battleSpell = "Flicker", battleSpellAlt = "Sprint"
+        ),
+        Hero(
+            name = "Novaria", role = Role.MAGE, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.POKE, Threat.BURST),
+            coreBuild = listOf(
+                core("Demon Shoes", "Mana for constant long-range poke."),
+                core("Clock of Destiny", "Power + HP scaling."),
+                core("Lightning Truncheon", "Burst proc."),
+                core("Divine Glaive", "Penetration vs resist."),
+                lux("Holy Crystal", "Max poke damage."),
+                lux("Blood Wings", "Shield + power.")
+            ),
+            tips = listOf(
+                "Snipe from extreme range with your orb; it reveals and chunks squishies.",
+                "Use your blink to dodge engages and keep your distance."
+            ),
+            powerSpike = "Long-range poke and vision controller from the mid game.",
+            emblem = "Mage", emblemTalents = "Magic Worship · sustained power",
+            battleSpell = "Flameshot", battleSpellAlt = "Flicker"
+        ),
+        Hero(
+            name = "Nolan", role = Role.ASSASSIN, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.BURST, Threat.HIGH_MOBILITY),
+            coreBuild = listOf(
+                core("Swift Boots", "Attack speed for his rift combo."),
+                core("Endless Battle", "True damage + sustain."),
+                core("Hunter Strike", "Penetration + mobility."),
+                core("Blade of Despair", "Burst to delete carries."),
+                lux("Malefic Roar", "Shred tanks late."),
+                lux("Immortality", "Survive a deep dive.")
+            ),
+            tips = listOf(
+                "Set rift marks, then detonate with your ult for AoE burst on the back line.",
+                "Use the dash between marks to dodge skills mid-combo."
+            ),
+            powerSpike = "Burst picker that snowballs from two items.",
+            emblem = "Assassin", emblemTalents = "Lethal Ignition · burst focus",
+            battleSpell = "Retribution (jungle)", battleSpellAlt = "Flicker"
+        ),
+        Hero(
+            name = "Joy", role = Role.ASSASSIN, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.BURST, Threat.HIGH_MOBILITY),
+            coreBuild = listOf(
+                core("Magic Shoes", "CDR so your dashes reset faster."),
+                core("Calamity Reaper", "Mana + true-damage proc on dashes."),
+                core("Glowing Wand", "Burn + power for the dash combo."),
+                core("Divine Glaive", "Penetration vs resist."),
+                lux("Holy Crystal", "Max burst."),
+                lux("Immortality", "Survive a deep dive.")
+            ),
+            tips = listOf(
+                "Dash to the beat — on-beat dashes grant immunity; use them to dodge CC.",
+                "Chain dashes through enemies to ramp damage, then ult to finish."
+            ),
+            powerSpike = "Hyper-mobile burst assassin; strong from level 4.",
+            emblem = "Assassin", emblemTalents = "Lethal Ignition · magic burst",
+            battleSpell = "Purify", battleSpellAlt = "Retribution (jungle)"
+        ),
+        Hero(
+            name = "Esmeralda", role = Role.MAGE, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.LIFESTEAL, Threat.TANKY, Threat.SUSTAINED_DPS),
+            coreBuild = listOf(
+                core("Magic Shoes", "CDR for shield + drain uptime."),
+                core("Calamity Reaper", "Mana + true-damage proc."),
+                core("Oracle", "Boosts her huge shields massively."),
+                core("Cursed Helmet", "HP + AoE burn while you brawl."),
+                lux("Athena's Shield", "Magic shield to dive."),
+                lux("Immortality", "Front-line revive.")
+            ),
+            tips = listOf(
+                "Steal enemy shields with skill 1, then convert them to your own HP.",
+                "Ult drags and stuns — engage onto clumped enemies with it."
+            ),
+            powerSpike = "Durable shield-eating bruiser-mage; strong all game.",
+            emblem = "Mage", emblemTalents = "Magic Worship · sustained power",
+            battleSpell = "Flicker", battleSpellAlt = "Sprint"
+        ),
+        Hero(
+            name = "Phoveus", role = Role.FIGHTER, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.SUSTAINED_DPS, Threat.TANKY),
+            coreBuild = listOf(
+                core("Magic Shoes", "CDR to chase with your leap."),
+                core("Calamity Reaper", "Mana + true-damage proc."),
+                core("Glowing Wand", "Burn + power."),
+                core("Divine Glaive", "Penetration vs resist."),
+                lux("Athena's Shield", "Magic shield to dive."),
+                lux("Immortality", "Front-line revive.")
+            ),
+            tips = listOf(
+                "Your ult leaps onto any enemy that uses a dash/blink — you hard-counter mobile heroes.",
+                "Pick Phoveus into Fanny, Ling, Wanwan and other dash-reliant heroes."
+            ),
+            powerSpike = "Anti-mobility bruiser; oppressive vs dash-heavy comps.",
+            emblem = "Fighter", emblemTalents = "Magic Worship · sustained power",
+            battleSpell = "Flicker", battleSpellAlt = "Petrify"
+        ),
+        Hero(
+            name = "Yin", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.BURST, Threat.HIGH_MOBILITY),
+            coreBuild = listOf(
+                core("Tough Boots", "Tenacity to all-in."),
+                core("Endless Battle", "True damage + sustain on his combos."),
+                core("Hunter Strike", "Penetration + mobility."),
+                core("Blade of Despair", "Burst to win the 1v1."),
+                lux("Malefic Roar", "Shred tanks late."),
+                lux("Queen's Wings", "Lifeline when diving.")
+            ),
+            tips = listOf(
+                "Ult drags one target to a solo realm — isolate and kill the enemy carry.",
+                "Use the 1v1 space to burst a squishy away from their team's peel."
+            ),
+            powerSpike = "Single-target duelist that snowballs off picks.",
+            emblem = "Fighter", emblemTalents = "Killing Spree · sustain on kills",
+            battleSpell = "Flicker", battleSpellAlt = "Execute"
+        ),
+        Hero(
+            name = "Aulus", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.SUSTAINED_DPS),
+            coreBuild = listOf(
+                core("Swift Boots", "Attack speed to ramp his ult stacks."),
+                core("War Axe", "Power + CDR."),
+                core("Endless Battle", "True damage + sustain."),
+                core("Berserker's Fury", "Crit for the empowered swings."),
+                lux("Blade of Despair", "Burst per hit."),
+                lux("Immortality", "Front-line revive.")
+            ),
+            tips = listOf(
+                "Ult ramps your attack speed and move speed as you keep swinging — never disengage.",
+                "Open fights on the frontline so your ult stays active the whole time."
+            ),
+            powerSpike = "Strong sustained-DPS bruiser once ramped in a fight.",
+            emblem = "Fighter", emblemTalents = "Weapons Master · attack speed",
+            battleSpell = "Flicker", battleSpellAlt = "Execute"
+        ),
+        Hero(
+            name = "Gloo", role = Role.TANK, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.HEAVY_CC, Threat.TANKY),
+            coreBuild = listOf(
+                core("Tough Boots", "Tenacity to stick on targets."),
+                core("Cursed Helmet", "AoE burn + HP scaling."),
+                core("Dominance Ice", "Armor + anti-heal + slow aura."),
+                core("Athena's Shield", "Magic shield vs mages."),
+                lux("Antique Cuirass", "Armor stacking."),
+                lux("Immortality", "Front-line revive.")
+            ),
+            tips = listOf(
+                "Stick to an enemy with skill 2; your ult latches you onto a target to disrupt them.",
+                "Split your blobs to body-block and zone the enemy back line."
+            ),
+            powerSpike = "Sticky disruption tank; great at locking down a carry.",
+            emblem = "Tank", emblemTalents = "Brave Smite · heal on damage",
+            battleSpell = "Flicker", battleSpellAlt = "Petrify"
+        ),
+        Hero(
+            name = "Barats", role = Role.TANK, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.TANKY, Threat.HEAVY_CC),
+            coreBuild = listOf(
+                core("Warrior Boots", "Defense to brawl."),
+                core("War Axe", "Power + CDR for his stacking damage."),
+                core("Dominance Ice", "Armor + anti-heal + slow aura."),
+                core("Antique Cuirass", "Armor + weaken."),
+                lux("Oracle", "Boosts his shields/regen."),
+                lux("Immortality", "Front-line revive.")
+            ),
+            tips = listOf(
+                "Eat enemies with your ult to grow — bigger Barats hits harder and tankier.",
+                "Stack your passive damage by staying in extended fights."
+            ),
+            powerSpike = "Scaling tanky bruiser; stronger the longer fights last.",
+            emblem = "Tank", emblemTalents = "Brave Smite · heal on damage",
+            battleSpell = "Flicker", battleSpellAlt = "Petrify"
+        ),
+
+        // ===================== POPULAR CLASSIC HEROES ======================
+        Hero(
+            name = "Alucard", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.BURST, Threat.LIFESTEAL, Threat.HIGH_MOBILITY),
+            coreBuild = listOf(
+                core("Swift Boots", "Attack speed for his lifesteal hits."),
+                core("Endless Battle", "True damage + sustain."),
+                core("Berserker's Fury", "Crit core."),
+                core("Demon Hunter Sword", "Percent damage + lifesteal."),
+                lux("Blade of Despair", "Burst spike."),
+                lux("Immortality", "Dive insurance.")
+            ),
+            tips = listOf(
+                "Stack lifesteal; your ult doubles healing so you out-sustain duels.",
+                "Use skill 2 to dash onto a target and lock the pursuit."
+            ),
+            powerSpike = "Strong early-to-mid duelist and jungler.",
+            emblem = "Fighter", emblemTalents = "Festival of Blood · spell vamp",
+            battleSpell = "Retribution (jungle)", battleSpellAlt = "Flicker"
+        ),
+        Hero(
+            name = "Selena", role = Role.ASSASSIN, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.BURST, Threat.HEAVY_CC, Threat.POKE),
+            coreBuild = listOf(
+                core("Magic Shoes", "CDR for combo uptime."),
+                core("Calamity Reaper", "Mana + true-damage proc."),
+                core("Glowing Wand", "Burn + power."),
+                core("Divine Glaive", "Penetration vs resist."),
+                lux("Holy Crystal", "Max burst."),
+                lux("Lightning Truncheon", "Extra burst proc.")
+            ),
+            tips = listOf(
+                "Land the long-range arrow stun (longer flight = longer stun), then combo.",
+                "Swap to Elf form to chase or escape; manage your abyssal/elf forms."
+            ),
+            powerSpike = "High-skill pick mage-assassin; strong from level 4.",
+            emblem = "Assassin", emblemTalents = "Lethal Ignition · magic burst",
+            battleSpell = "Flicker", battleSpellAlt = "Retribution (jungle)"
+        ),
+        Hero(
+            name = "Hanabi", role = Role.MARKSMAN, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.SUSTAINED_DPS, Threat.HEAVY_CC),
+            coreBuild = listOf(
+                core("Swift Boots", "Attack speed for her bouncing shots."),
+                core("Demon Hunter Sword", "Attack speed + percent damage."),
+                core("Berserker's Fury", "Crit for the ricochet."),
+                core("Scarlet Phantom", "Attack speed + crit refresh."),
+                lux("Malefic Roar", "Penetration vs tanks."),
+                lux("Immortality", "Survive a dive.")
+            ),
+            tips = listOf(
+                "Your passive shield makes you CC-immune — push waves and teamfight fearlessly.",
+                "Bounce shots off the front target to hit the whole grouped enemy team."
+            ),
+            powerSpike = "Late-game AoE shredder; very safe against CC.",
+            emblem = "Marksman", emblemTalents = "Weapons Master · attack speed",
+            battleSpell = "Flicker", battleSpellAlt = "Sprint"
+        ),
+        Hero(
+            name = "Valentina", role = Role.MAGE, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.BURST, Threat.HIGH_MOBILITY),
+            coreBuild = listOf(
+                core("Magic Shoes", "CDR for combo flexibility."),
+                core("Calamity Reaper", "Mana + true-damage proc."),
+                core("Clock of Destiny", "Power + HP scaling."),
+                core("Divine Glaive", "Penetration vs resist."),
+                lux("Holy Crystal", "Max burst."),
+                lux("Blood Wings", "Shield + power.")
+            ),
+            tips = listOf(
+                "Your ult copies an enemy ultimate — steal their best engage or burst.",
+                "Pick whose ult to copy based on the fight; she's a flexible counter-pick."
+            ),
+            powerSpike = "Flexible burst + utility mage from the mid game.",
+            emblem = "Mage", emblemTalents = "Impure Rage · burst focus",
+            battleSpell = "Flicker", battleSpellAlt = "Flameshot"
+        ),
+        Hero(
+            name = "Helcurt", role = Role.ASSASSIN, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.BURST, Threat.HIGH_MOBILITY),
+            coreBuild = listOf(
+                core("Swift Boots", "Attack speed for his enhanced basics."),
+                core("Endless Battle", "True damage + sustain."),
+                core("Blade of Despair", "Burst to delete carries."),
+                core("Hunter Strike", "Penetration + mobility."),
+                lux("Malefic Roar", "Shred tanks late."),
+                lux("Immortality", "Survive a deep dive.")
+            ),
+            tips = listOf(
+                "Your ult blacks out the enemy team's vision — engage from the darkness.",
+                "Open with the dash-sting to silence and lock a priority target."
+            ),
+            powerSpike = "Teamfight-flipping picker once two core items are done.",
+            emblem = "Assassin", emblemTalents = "Lethal Ignition · attack + pen",
+            battleSpell = "Retribution (jungle)", battleSpellAlt = "Flicker"
+        ),
+        Hero(
+            name = "Jawhead", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.BURST, Threat.HEAVY_CC),
+            coreBuild = listOf(
+                core("Warrior Boots", "Defense to dive."),
+                core("Endless Battle", "True damage + sustain."),
+                core("Hunter Strike", "Penetration + mobility."),
+                core("Blade of Despair", "Burst to delete a carry."),
+                lux("Malefic Roar", "Shred tanks late."),
+                lux("Immortality", "Dive insurance.")
+            ),
+            tips = listOf(
+                "Throw an enemy (skill 2) into your team or toward a wall to set up the kill.",
+                "Ult suppresses a single target — lock the enemy carry, then burst."
+            ),
+            powerSpike = "Strong dive + pick fighter from the mid game.",
+            emblem = "Fighter", emblemTalents = "Killing Spree · sustain on kills",
+            battleSpell = "Flicker", battleSpellAlt = "Execute"
+        ),
+        Hero(
+            name = "Hilda", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.BURST, Threat.TANKY),
+            coreBuild = listOf(
+                core("Warrior Boots", "Defense to brawl."),
+                core("Endless Battle", "True damage + sustain."),
+                core("War Axe", "Power + CDR."),
+                core("Blade of Despair", "Burst from her ult engage."),
+                lux("Brute Force Breastplate", "Move + defense to stick."),
+                lux("Immortality", "Dive insurance.")
+            ),
+            tips = listOf(
+                "Regen in bushes with your passive, then ult-slam onto a target for big burst.",
+                "Strong early jungle/roam; gank lanes before enemies have defense."
+            ),
+            powerSpike = "Early-game bully with a strong ult engage.",
+            emblem = "Fighter", emblemTalents = "Killing Spree · sustain on kills",
+            battleSpell = "Retribution (jungle)", battleSpellAlt = "Flicker"
+        ),
+        Hero(
+            name = "Hanzo", role = Role.ASSASSIN, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.BURST, Threat.HIGH_MOBILITY),
+            coreBuild = listOf(
+                core("Swift Boots", "Attack speed for his demon's hits."),
+                core("Endless Battle", "True damage + sustain."),
+                core("Berserker's Fury", "Crit core for the demon."),
+                core("Blade of Despair", "Burst to delete carries."),
+                lux("Malefic Roar", "Shred tanks late."),
+                lux("Immortality", "Protect your real body.")
+            ),
+            tips = listOf(
+                "Ult sends out your demon while your body hides safely — gank from across the map.",
+                "Refill your demon's soul energy on jungle camps before engaging."
+            ),
+            powerSpike = "Safe, far-reaching picker that scales into a one-shot threat.",
+            emblem = "Assassin", emblemTalents = "Weapons Master · crit",
+            battleSpell = "Retribution (jungle)", battleSpellAlt = "Flicker"
+        ),
+        Hero(
+            name = "Argus", role = Role.FIGHTER, damageType = DamageType.PHYSICAL,
+            threats = setOf(Threat.SUSTAINED_DPS, Threat.HIGH_MOBILITY),
+            coreBuild = listOf(
+                core("Swift Boots", "Attack speed for his blade hits."),
+                core("Endless Battle", "True damage + sustain."),
+                core("Berserker's Fury", "Crit core."),
+                core("Demon Hunter Sword", "Percent damage + lifesteal."),
+                lux("Blade of Despair", "Burst spike."),
+                lux("Malefic Roar", "Shred tanks late.")
+            ),
+            tips = listOf(
+                "Ult makes you immortal for its duration — dive in and finish before it ends.",
+                "Time the immortality to bait their burst, then kill them as it fades."
+            ),
+            powerSpike = "Strong diving duelist with a clutch immortal ult.",
+            emblem = "Fighter", emblemTalents = "Festival of Blood · spell vamp",
+            battleSpell = "Flicker", battleSpellAlt = "Execute"
+        ),
+        Hero(
+            name = "Vexana", role = Role.MAGE, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.BURST, Threat.HEAVY_CC),
+            coreBuild = listOf(
+                core("Magic Shoes", "CDR for combo uptime."),
+                core("Lightning Truncheon", "Burst proc on your fear combo."),
+                core("Clock of Destiny", "Power + HP scaling."),
+                core("Divine Glaive", "Penetration vs resist."),
+                lux("Holy Crystal", "Max burst."),
+                lux("Blood Wings", "Shield + power.")
+            ),
+            tips = listOf(
+                "Fear a target with skill 2, then combo for guaranteed burst while they're CC'd.",
+                "Your ult raises slain enemies as bombs — great in grouped fights."
+            ),
+            powerSpike = "Reliable CC-burst mage from level 4 onward.",
+            emblem = "Mage", emblemTalents = "Impure Rage · burst focus",
+            battleSpell = "Flicker", battleSpellAlt = "Flameshot"
+        ),
+        Hero(
+            name = "Faramis", role = Role.SUPPORT, damageType = DamageType.MAGIC,
+            threats = setOf(Threat.LIFESTEAL),
+            coreBuild = listOf(
+                core("Magic Shoes", "CDR for skill uptime."),
+                core("Enchanted Talisman", "Mana + CDR + HP."),
+                core("Lightning Truncheon", "His passive scales with magic power."),
+                core("Clock of Destiny", "Power + HP scaling."),
+                lux("Oracle", "Boosts shields/regen."),
+                lux("Immortality", "Stay alive to keep enabling fights.")
+            ),
+            tips = listOf(
+                "Ult revives fallen allies in an area — use it to win a 5v5 you 'lost'.",
+                "Your skill 1 pulls and damages; combo it to group enemies for your team."
+            ),
+            powerSpike = "Game-swinging team-revive support in grouped fights.",
+            emblem = "Support", emblemTalents = "Pull Yourself Together · CD reset",
+            battleSpell = "Flicker", battleSpellAlt = "Sprint"
+        ),
+        Hero(
+            name = "Kimmy", role = Role.MARKSMAN, damageType = DamageType.MIXED,
+            threats = setOf(Threat.SUSTAINED_DPS, Threat.POKE),
+            coreBuild = listOf(
+                core("Demon Shoes", "Mana/energy sustain for constant fire."),
+                core("Demon Hunter Sword", "Attack speed + percent damage."),
+                core("Corrosion Scythe", "Attack speed + slow to kite."),
+                core("Golden Staff", "On-hit reliability for her stacking shots."),
+                lux("Malefic Roar", "Penetration vs tanks."),
+                lux("Wind of Nature", "Survive a dive.")
+            ),
+            tips = listOf(
+                "You can move while shooting — kite endlessly and never stop firing.",
+                "Charge your ult, then fire the long-range chemical blast across the lane."
+            ),
+            powerSpike = "Mobile poke carry that kites the whole game.",
+            emblem = "Marksman", emblemTalents = "Weapons Master · attack speed",
+            battleSpell = "Flicker", battleSpellAlt = "Sprint"
         )
     )
 

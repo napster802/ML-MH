@@ -5,15 +5,20 @@ Bang Bang. It docks a small draggable bubble over the game; tap it, choose
 the hero **you're** playing and the enemy heroes, and it shows:
 
 - the recommended **emblem set + talent** and **battle spell** (with an alt),
-- your **core build** path,
-- **situational items** tailored to the enemy line-up (anti-heal, armor,
+- a full **6-item build** for your hero (each item shown with a generated icon),
+- **counter items** tailored to the enemy line-up (anti-heal, armor,
   magic resist, penetration, survivability actives),
 - your **power spike**, and
 - **hero tips** and **matchup notes**.
 
-The knowledge base currently covers **80+ heroes** across all six roles
-(assassins, marksmen, mages, fighters, tanks, supports) and is trivially
-extensible.
+Heroes and items are shown with colour-coded generated icons (heroes by role,
+items by category) so you can identify them at a glance. Selection uses an
+in-panel picker with a role filter — no dropdowns, which don't render in
+Android overlay windows.
+
+The knowledge base currently covers **100+ heroes** across all six roles
+(assassins, marksmen, mages, fighters, tanks, supports), including recent
+releases, and is trivially extensible.
 
 ## This is a knowledge-base advisor, not a game hack
 
@@ -34,7 +39,8 @@ chat-head messengers and screen-recording tools.
 
 | Layer | File | Responsibility |
 |-------|------|----------------|
-| Knowledge base | `data/HeroRepository.kt` | 80+ heroes: builds, emblems, spells, tips, threat tags |
+| Knowledge base | `data/HeroRepository.kt` | 100+ heroes: builds, emblems, spells, tips, threat tags |
+| Icons | `ui/Visuals.kt` | Generated colour-coded hero/item badges (no image assets) |
 | Advisor logic | `data/BuildAdvisor.kt` | Turns your hero + enemy picks into prioritized suggestions |
 | Models | `data/Models.kt` | Plain data classes, no Android deps |
 | Launcher | `ui/MainActivity.kt` | Requests permissions, starts/stops the overlay |

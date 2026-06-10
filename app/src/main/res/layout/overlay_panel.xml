@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/panelRoot"
-    android:layout_width="320dp"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/panel_bg"
     android:orientation="vertical"
@@ -26,68 +26,92 @@
 
         <TextView
             android:id="@+id/collapseButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/chip_bg"
             android:gravity="center"
             android:text="—"
             android:textColor="@color/text"
             android:textSize="18sp" />
     </LinearLayout>
 
-    <!-- Your hero -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="YOUR HERO"
-        android:textColor="@color/text_dim"
-        android:textSize="11sp"
-        android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/myHeroSpinner"
+    <!-- Your hero selector -->
+    <LinearLayout
+        android:id="@+id/heroRow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp" />
-
-    <!-- Enemy add row -->
-    <TextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="ENEMY HEROES"
-        android:textColor="@color/text_dim"
-        android:textSize="11sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:background="@drawable/chip_bg"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="8dp">
 
-        <Spinner
-            android:id="@+id/enemySpinner"
+        <ImageView
+            android:id="@+id/myHeroIcon"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:contentDescription="hero" />
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YOUR HERO"
+                android:textColor="@color/text_dim"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/myHeroName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lancelot"
+                android:textColor="@color/text"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/addEnemyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/button_bg"
-            android:paddingHorizontal="14dp"
-            android:paddingVertical="8dp"
-            android:text="+ Add"
-            android:textColor="@color/black"
-            android:textSize="13sp"
-            android:textStyle="bold" />
+            android:text="Tap to change ▾"
+            android:textColor="@color/accent"
+            android:textSize="11sp" />
     </LinearLayout>
 
-    <!-- Selected enemy chips -->
+    <!-- Add enemy -->
+    <LinearLayout
+        android:id="@+id/enemyAddRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/chip_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="＋ Add enemy hero"
+            android:textColor="@color/text"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap to pick ▾"
+            android:textColor="@color/accent"
+            android:textSize="11sp" />
+    </LinearLayout>
+
     <com.google.android.flexbox.FlexboxLayout
         android:id="@+id/enemyChips"
         android:layout_width="match_parent"
@@ -101,18 +125,67 @@
         android:layout_marginVertical="10dp"
         android:background="@color/accent_dim" />
 
-    <!-- Scrollable results -->
-    <ScrollView
+    <!-- Swappable content area: results OR the hero picker -->
+    <FrameLayout
+        android:id="@+id/contentArea"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:maxHeight="360dp"
-        android:minHeight="120dp">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/resultsContainer"
+        <ScrollView
+            android:id="@+id/resultsScroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/resultsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <!-- Hero picker (hidden until a selector row is tapped) -->
+        <LinearLayout
+            android:id="@+id/pickerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/panel"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/pickerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="6dp"
+                android:text="Pick your hero"
+                android:textColor="@color/accent"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/roleFilterRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/heroListContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </ScrollView>
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout>

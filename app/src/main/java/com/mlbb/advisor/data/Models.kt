@@ -58,13 +58,16 @@ data class Hero(
 /** The full set of suggestions the overlay renders for a match. */
 data class Recommendation(
     val heroName: String,
+    val role: Role,
     val powerSpike: String,
     val emblem: String,
     val emblemTalents: String,
     val battleSpell: String,
     val battleSpellAlt: String,
-    val coreBuild: List<ItemAdvice>,
-    val situational: List<ItemAdvice>,
+    /** Exactly six items: the recommended full build for the picked hero. */
+    val sixItemBuild: List<ItemAdvice>,
+    /** Items to consider swapping in to counter the enemy line-up. */
+    val counterItems: List<ItemAdvice>,
     val tips: List<String>,
     val matchupNotes: List<String>
 )
