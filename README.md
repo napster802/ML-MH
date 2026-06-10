@@ -4,11 +4,16 @@ A floating, on-screen **item-build and tips advisor** for Mobile Legends:
 Bang Bang. It docks a small draggable bubble over the game; tap it, choose
 the hero **you're** playing and the enemy heroes, and it shows:
 
+- the recommended **emblem set + talent** and **battle spell** (with an alt),
 - your **core build** path,
 - **situational items** tailored to the enemy line-up (anti-heal, armor,
   magic resist, penetration, survivability actives),
 - your **power spike**, and
 - **hero tips** and **matchup notes**.
+
+The knowledge base currently covers **80+ heroes** across all six roles
+(assassins, marksmen, mages, fighters, tanks, supports) and is trivially
+extensible.
 
 ## This is a knowledge-base advisor, not a game hack
 
@@ -29,7 +34,7 @@ chat-head messengers and screen-recording tools.
 
 | Layer | File | Responsibility |
 |-------|------|----------------|
-| Knowledge base | `data/HeroRepository.kt` | Heroes, builds, tips, threat tags |
+| Knowledge base | `data/HeroRepository.kt` | 80+ heroes: builds, emblems, spells, tips, threat tags |
 | Advisor logic | `data/BuildAdvisor.kt` | Turns your hero + enemy picks into prioritized suggestions |
 | Models | `data/Models.kt` | Plain data classes, no Android deps |
 | Launcher | `ui/MainActivity.kt` | Requests permissions, starts/stops the overlay |
@@ -40,18 +45,28 @@ The advisor reads the enemy team's damage split (physical/magic) and
 proposes counters — e.g. anti-heal vs sustain comps, penetration vs
 defense-stackers, immunity actives vs burst.
 
-## Building
+## Getting the APK
 
-Requires Android Studio (Hedgehog+) or the Android SDK with the command
-line tools.
+A GitHub Actions workflow ([`.github/workflows/build-apk.yml`](.github/workflows/build-apk.yml))
+builds the APK on every push and publishes it two ways:
+
+1. **Release asset** — see the **`apk-latest`** release on this repo and
+   download `MLBB-Advisor.apk`.
+2. **Workflow artifact** — open the latest **Build APK** run under the
+   *Actions* tab and download the `MLBB-Advisor-apk` artifact.
+
+Copy the APK to your Android phone and install it (you may need to enable
+*Install unknown apps* for your browser/file manager). On first launch,
+grant **"Display over other apps"**.
+
+### Building locally
+
+Requires Android Studio (Hedgehog+) or the Android SDK command-line tools:
 
 ```bash
 ./gradlew assembleDebug
 # APK lands in app/build/outputs/apk/debug/
 ```
-
-Then install on a device and, on first launch, grant **"Display over other
-apps"** when prompted.
 
 ## Using it in a match
 
@@ -67,4 +82,5 @@ apps"** when prompted.
 
 Add a `Hero(...)` entry to the `heroes` list in `HeroRepository.kt`. The
 advisor logic is generic, so new heroes need **no** code changes — just fill
-in the role, damage type, threat tags, core build, tips, and power spike.
+in the role, damage type, threat tags, core build, tips, power spike, emblem,
+emblem talents, and battle spells.

@@ -237,6 +237,10 @@ class OverlayService : Service() {
 
         val rec = BuildAdvisor.advise(myHero, enemies) ?: return
 
+        addHeader(container, "EMBLEM & SPELL")
+        addBody(container, "Emblem: ${rec.emblem}  —  ${rec.emblemTalents}")
+        addBody(container, "Spell: ${rec.battleSpell}   (alt: ${rec.battleSpellAlt})")
+
         addHeader(container, "POWER SPIKE")
         addBody(container, rec.powerSpike)
 

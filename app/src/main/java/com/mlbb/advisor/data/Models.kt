@@ -44,13 +44,25 @@ data class Hero(
     /** General tips for piloting this hero well. */
     val tips: List<String>,
     /** Power-spike note: when this hero is strongest in the match. */
-    val powerSpike: String
+    val powerSpike: String,
+    /** Recommended emblem set (e.g. "Assassin", "Custom Mage"). */
+    val emblem: String,
+    /** Key emblem talent line, top to bottom. */
+    val emblemTalents: String,
+    /** Primary battle spell. */
+    val battleSpell: String,
+    /** A viable alternative battle spell for other situations. */
+    val battleSpellAlt: String
 )
 
 /** The full set of suggestions the overlay renders for a match. */
 data class Recommendation(
     val heroName: String,
     val powerSpike: String,
+    val emblem: String,
+    val emblemTalents: String,
+    val battleSpell: String,
+    val battleSpellAlt: String,
     val coreBuild: List<ItemAdvice>,
     val situational: List<ItemAdvice>,
     val tips: List<String>,

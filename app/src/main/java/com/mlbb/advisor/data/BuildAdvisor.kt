@@ -105,6 +105,10 @@ object BuildAdvisor {
         return Recommendation(
             heroName = me.name,
             powerSpike = me.powerSpike,
+            emblem = me.emblem,
+            emblemTalents = me.emblemTalents,
+            battleSpell = me.battleSpell,
+            battleSpellAlt = me.battleSpellAlt,
             coreBuild = me.coreBuild.filter { it.priority == Priority.CORE },
             situational = dedupSituational + me.coreBuild.filter { it.priority == Priority.LUXURY },
             tips = me.tips,
